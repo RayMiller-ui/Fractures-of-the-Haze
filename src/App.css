@@ -1,20 +1,21 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.container{
+.container {
   /*outline: 1px solid red;*/
   background-color: var(--color-bg-deep);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /*Hardcoded [for now]*/
+  height: 100vh;
+  /*Hardcoded [for now]*/
   width: 100%;
 }
 
-.fake-head{
+.fake-head {
   top: 0;
   left: 0;
   width: 100%;
@@ -27,17 +28,18 @@
   color: var(--color-text-primary);
 }
 
-.github{
+.github {
   margin-left: auto;
   font-family: var(--font-body);
   color: var(--color-text-muted);
 }
 
-.metastab{
+.metastab {
   font-family: var(--font-body);
+  color: var(--color-text-muted);
 }
 
-.hero{
+.hero {
   /*background-color: purple;*/
   display: flex;
   align-items: center;
@@ -45,28 +47,28 @@
   max-width: 45%;
   max-height: 100%;
   flex-direction: column;
-  
+
 }
 
-.hero-text{
+.hero-text {
   /*background-color: blue;*/
   color: var(--color-text-primary);
   font-size: 17rem;
-  margin:0;
+  margin: 0;
   line-height: 1;
   padding-top: 10px;
-  font-family: var(--font-display); 
+  font-family: var(--font-display);
 }
 
-.hero-subtext{
+.hero-subtext {
   max-width: 70%;
   font-size: 2rem;
-  text-align: center; 
+  text-align: center;
   color: var(--color-text-primary);
   font-family: var(--font-body);
 }
 
-.btnImp{
+.btnImp {
   font-size: 1rem;
   border-radius: 20px;
   border: black 1px solid;
@@ -76,12 +78,12 @@
   background-color: var(--color-text-muted)
 }
 
-.filler{
+.filler {
   font-size: 0.9rem;
   color: var(--color-text-muted);
 }
 
-.scroll-tag{
+.scroll-tag {
   margin-top: 5rem;
   font-size: 1rem;
   color: var(--color-text-faint);
@@ -89,15 +91,15 @@
 
 /*most of the css is done for hero section.*/
 
-.video-bg{
+.video-bg {
   position: fixed;
-  inset:0;
+  inset: 0;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
 }
 
-.video-bg video{
+.video-bg video {
   width: 100%;
   height: 100%;
   object-fit: cover;
