@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import './Styling/variables.css'
 import './App.css'
+import './Styling/about.css'
+import './Styling/timeline.css'
 
 
 function App() {
@@ -22,6 +24,16 @@ function App() {
           <p className="scroll-tag">Scroll to Explore</p>
         </section>
       </div>
+
+      <section className="about">
+        <h1 className="about-text">About</h1>
+        <p className="about-subtext">About</p>
+      </section>
+
+      <section className="timeline">
+        <h1 className="timeline-text">Timeline</h1>
+        <p className="timeline-subtext">Timeline</p>
+      </section>
 
     </main>
   )

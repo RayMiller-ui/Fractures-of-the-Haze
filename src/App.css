@@ -40,7 +40,7 @@
 }
 
 .hero {
-  /*background-color: purple;*/
+  /* background-color: purple; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,43 +48,49 @@
   max-height: 100%;
   flex-direction: column;
 
+  /* To shift the whole block up slightly */
+  margin-top: 10vh;
 }
 
 .hero-text {
-  /*background-color: blue;*/
+  /* background-color: blue; */
   color: var(--color-text-primary);
   font-size: 17rem;
   margin: 0;
   line-height: 1;
-  padding-top: 10px;
   font-family: var(--font-display);
 }
 
 .hero-subtext {
-  max-width: 70%;
-  font-size: 2rem;
+  max-width: 75%;
+  font-size: 1.75rem;
   text-align: center;
   color: var(--color-text-primary);
   font-family: var(--font-body);
+
+  padding-top: 3vh;
 }
 
 .btnImp {
   font-size: 1rem;
   border-radius: 20px;
-  border: black 1px solid;
-  padding: 10px 15px 10px 15px;
   margin-top: 40px;
   margin-bottom: 30px;
-  background-color: var(--color-text-muted)
+  border-style: none;
+  color: var(--color-text-primary);
+  background-color: var(--color-text-faint);
+
+  padding: 10px 15px 10px 15px;
 }
 
 .filler {
   font-size: 0.9rem;
   color: var(--color-text-muted);
+  font-family: var(--font-body);
 }
 
 .scroll-tag {
-  margin-top: 5rem;
+  margin-top: 5.5rem;
   font-size: 1rem;
   color: var(--color-text-faint);
 }
@@ -105,14 +111,13 @@
   object-fit: cover;
 }
 
-/*This is creating a issue, buttons are not clickable*/
+/*This is creating a issue, let's see*/
 /* .hero::before {
   content: "";
   position: absolute;
+  pointer-events: none;
   inset: 0;
-  background: radial-gradient(
-    circle at center,
-    transparent 40%,
-    rgba(35,28,36,0.9)
-  );
+  background: radial-gradient(circle at center,
+      transparent 40%,
+      rgba(35, 28, 36, 0.9));
 } */

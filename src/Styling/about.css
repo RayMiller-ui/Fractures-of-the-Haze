@@ -1,0 +1,24 @@
+.about {
+    height: 70vh;
+    width: 100%;
+    background-color: var(--color-bg-deep);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-text {
+    color: var(--color-text-primary);
+    font-size: 17rem;
+    margin: 0;
+    line-height: 1;
+    font-family: var(--font-display);
+}
+
+.about-subtext {
+    color: var(--color-text-primary);
+    font-size: 1.75rem;
+    text-align: center;
+    font-family: var(--font-body);
+}
