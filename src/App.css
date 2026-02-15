@@ -4,16 +4,22 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(15, 39, 107);
+}
+
 .container {
   /*outline: 1px solid red;*/
-  background-color: var(--color-bg-deep);
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   /*Hardcoded [for now]*/
   width: 100%;
+  /*z-index: 2;*/
 }
+
 
 .fake-head {
   top: 0;
@@ -26,21 +32,25 @@
   padding: 1rem 1.3rem 1rem 1.3rem;
   background-color: transparent;
   color: var(--color-text-primary);
+  z-index: 2;
 }
 
 .github {
   margin-left: auto;
   font-family: var(--font-body);
-  color: var(--color-text-muted);
+  color: var(--color-text-primary);
+  z-index: 3;
 }
 
 .metastab {
   font-family: var(--font-body);
-  color: var(--color-text-muted);
+  color: var(--color-text-primary);
+  z-index: 3;
 }
 
 .hero {
   /* background-color: purple; */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,17 +58,26 @@
   max-height: 100%;
   flex-direction: column;
 
+  /*Hide the hero section*/
+  z-index: 2;
+
   /* To shift the whole block up slightly */
   margin-top: 10vh;
 }
 
+
+
 .hero-text {
   /* background-color: blue; */
   color: var(--color-text-primary);
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.65);
   font-size: 17rem;
   margin: 0;
+  filter: blur(0.5px);
+  opacity: 0.95;
   line-height: 1;
   font-family: var(--font-display);
+
 }
 
 .hero-subtext {
@@ -77,8 +96,10 @@
   margin-top: 40px;
   margin-bottom: 30px;
   border-style: none;
-  color: var(--color-text-primary);
-  background-color: var(--color-text-faint);
+  color: #f5f5f5;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.08);
 
   padding: 10px 15px 10px 15px;
 }
@@ -98,11 +119,18 @@
 /*most of the css is done for hero section.*/
 
 .video-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  background-color: var(--color-bg-deep);
+  /*opacity: 0.28;*/
+  -webkit-mask-image: linear-gradient(to bottom, blue 95%, transparent 100%);
+  mask-image: linear-gradient(to bottom, blue 95%, transparent 100%);
 }
 
 .video-bg video {
@@ -110,6 +138,20 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* .nerf-vid {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  object-fit: cover;
+  background: radial-gradient(circle at center,
+      rgba(0, 0, 0, 0) 20%,
+      rgba(0, 0, 0, 0.3) 45%,
+      rgba(0, 0, 0, 0.7) 75%,
+      rgba(0, 0, 0, 0.95) 100%);
+
+} */
+
 
 /*This is creating a issue, let's see*/
 /* .hero::before {
@@ -120,4 +162,4 @@
   background: radial-gradient(circle at center,
       transparent 40%,
       rgba(35, 28, 36, 0.9));
-} */
+}*/
