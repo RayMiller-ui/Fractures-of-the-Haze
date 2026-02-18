@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import FakeHead from './Components/FakeHead'
+import RealHead from './Components/RealHead'
 
 import './Styling/variables.css'
 import './App.css'
@@ -7,13 +9,36 @@ import './Styling/timeline.css'
 
 
 function App() {
+
+  //black magic
+  const [showRealHead, setShowRealHead] = useState(false);
+  const timelineRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowRealHead(entry.isIntersecting);
+      },
+      { threshold: 1 } // Trigger when 100% of timeline is visible
+    );
+
+    if (timelineRef.current) {
+      observer.observe(timelineRef.current);
+    }
+
+    return () => {
+      if (timelineRef.current) {
+        observer.unobserve(timelineRef.current);
+      }
+    };
+  }, []);
+
+  //black magic ends here
+
   return (
     <main>
 
-      <div className="fake-head">
-        <p className='metastab'>Metastab</p>
-        <p className="github">Github</p>
-      </div>
+      {showRealHead ? <RealHead /> : <FakeHead />}
 
       <div className="video-bg">
         <video autoPlay loop muted playsInline>
@@ -33,15 +58,14 @@ function App() {
         </section>
       </div>
 
+      {/* isolation giving me nightmares so let it be here*/}
       <section className="about">
         <img src="about.png" alt="image" className='about-img' />
         <h1 className="about-text">About</h1>
         <p className="about-subtext">About</p>
       </section>
 
-      <section className="timeline">
-        <h1 className="timeline-text">Timeline</h1>
-        <p className="timeline-subtext">Timeline</p>
+      <section className="timeline" ref={timelineRef}>
       </section>
 
     </main>

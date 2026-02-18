@@ -1,28 +1,16 @@
 .timeline {
+    position: relative;
+    z-index: 1;
     height: 100vh;
     width: 100%;
-    /* #040405 */
-    background: linear-gradient(to bottom, #060607, #111c3a);
+
+    backdrop-filter: blur(50px);
+
+    background: rgba(4, 27, 44, 0.35);
+    /* tinted glass */
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(5px);
-}
-
-.timeline-text {
-    color: var(--color-text-primary);
-    font-size: 17rem;
-    margin: 0;
-    line-height: 1;
-    font-family: var(--font-display);
-    z-index: 2;
-}
-
-.timeline-subtext {
-    color: var(--color-text-primary);
-    font-size: 1.75rem;
-    text-align: center;
-    font-family: var(--font-body);
-    z-index: 2;
 }

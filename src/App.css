@@ -35,6 +35,20 @@ body {
   z-index: 2;
 }
 
+.real-head {
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 1.5rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.3rem 1rem 1.3rem;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  z-index: 5;
+}
+
 .github {
   margin-left: auto;
   font-family: var(--font-body);
